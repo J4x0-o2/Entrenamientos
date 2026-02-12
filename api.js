@@ -46,7 +46,7 @@ export async function sendWorkoutData(data) {
  * Validar que la URL de API esté configurada correctamente
  */
 function validateApiUrl() {
-    if (CONFIG.API_URL === 'https://script.google.com/macros/s/AKfycbx3tj9FGKNBZalwiX19eSCIwQgWl5cveA7438cJ-csfRVGlniQzuzOxl9Uxk3ms_HvB/exec') {
+    if (CONFIG.API_URL === 'https://script.google.com/macros/s/AKfycby9S9rDaPQ6NvggJzy1MU3aIWKrxlvsoPYFyqMYZLGwvgBd6TzZBOEBFBgtiL941elY/exec') {
         throw new Error(
             'URL de Google Apps Script no configurada. ' +
             'Actualiza CONFIG.API_URL en config.js'

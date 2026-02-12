@@ -7,7 +7,7 @@
  */
 
 export const CONFIG = {
-    API_URL: 'https://script.google.com/macros/s/AKfycbx3tj9FGKNBZalwiX19eSCIwQgWl5cveA7438cJ-csfRVGlniQzuzOxl9Uxk3ms_HvB/exec',
+    API_URL: 'https://script.google.com/macros/s/AKfycby9S9rDaPQ6NvggJzy1MU3aIWKrxlvsoPYFyqMYZLGwvgBd6TzZBOEBFBgtiL941elY/exec',
     LOCAL_STORAGE_KEY_DAY: 'currentDay',
     TOTAL_DAYS: 4,
     DEFAULT_UNIT: 'kg',
