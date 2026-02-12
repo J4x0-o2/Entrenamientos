@@ -7,7 +7,7 @@
  */
 
 export const CONFIG = {
-    API_URL: 'PEGA_AQUI_TU_URL_DE_GOOGLE_APPS_SCRIPT',
+    API_URL: 'https://script.google.com/macros/s/AKfycbx3tj9FGKNBZalwiX19eSCIwQgWl5cveA7438cJ-csfRVGlniQzuzOxl9Uxk3ms_HvB/exec',
     LOCAL_STORAGE_KEY_DAY: 'currentDay',
     TOTAL_DAYS: 4,
     DEFAULT_UNIT: 'kg',
