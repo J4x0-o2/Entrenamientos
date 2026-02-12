@@ -46,10 +46,21 @@ export async function sendWorkoutData(data) {
  * Validar que la URL de API esté configurada correctamente
  */
 function validateApiUrl() {
-    if (CONFIG.API_URL === 'https://script.google.com/macros/s/AKfycby9S9rDaPQ6NvggJzy1MU3aIWKrxlvsoPYFyqMYZLGwvgBd6TzZBOEBFBgtiL941elY/exec') {
+    const isPlaceholder = CONFIG.API_URL === 'https://script.google.com/macros/s/AKfycby9S9rDaPQ6NvggJzy1MU3aIWKrxlvsoPYFyqMYZLGwvgBd6TzZBOEBFBgtiL941elY/exec';
+    const isEmpty = !CONFIG.API_URL || CONFIG.API_URL.trim() === '';
+    const isValid = CONFIG.API_URL.includes('script.googleapis.com') || CONFIG.API_URL.includes('script.google.com');
+    
+    if (isPlaceholder || isEmpty) {
         throw new Error(
             'URL de Google Apps Script no configurada. ' +
             'Actualiza CONFIG.API_URL en config.js'
+        );
+    }
+    
+    if (!isValid) {
+        throw new Error(
+            'URL de Google Apps Script invalida. ' +
+            'Debe contener script.googleapis.com o script.google.com'
         );
     }
 }
