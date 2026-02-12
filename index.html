@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#2c3e50">
+    <meta name="description" content="PWA para registrar entrenamientos de gimnasio - 4x Full Body">
+    <title>4x Full Body Tracker</title>
+    
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect fill='%232c3e50' width='192' height='192'/><text x='50%' y='50%' font-size='100' fill='white' text-anchor='middle' dy='.3em' font-weight='bold'>4x</text></svg>">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect fill='%232c3e50' width='192' height='192'/><text x='50%' y='50%' font-size='100' fill='white' text-anchor='middle' dy='.3em' font-weight='bold'>4x</text></svg>">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>4x Full Body</h1>
+            <p class="subtitle">Registra tu entrenamiento</p>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Selector de dia -->
+            <section class="day-selector-section">
+                <div class="day-selector">
+                    <button class="btn-day" data-day="1" id="btnDay1">Dia 1</button>
+                    <button class="btn-day" data-day="2" id="btnDay2">Dia 2</button>
+                    <button class="btn-day" data-day="3" id="btnDay3">Dia 3</button>
+                    <button class="btn-day" data-day="4" id="btnDay4">Dia 4</button>
+                </div>
+            </section>
+
+            <!-- Dia actual -->
+            <section class="day-info">
+                <div class="day-display">
+                    <span class="day-label">Entrenamiento</span>
+                    <span class="day-text" id="currentDay">Dia 1</span>
+                </div>
+            </section>
+
+            <!-- Barra de progreso -->
+            <section class="progress-section">
+                <div class="progress-label">
+                    <span>Progreso: <span id="completedSets">0</span>/<span id="totalSets">0</span> series</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+            </section>
+
+            <!-- Lista de ejercicios -->
+            <section class="exercises-section">
+                <div id="exercisesContainer">
+                    <!-- Se genera dinámicamente -->
+                </div>
+            </section>
+
+            <!-- Boton de terminar entrenamiento -->
+            <section class="action-section">
+                <button id="finishBtn" class="btn btn-primary btn-large">
+                    Terminar Entrenamiento
+                </button>
+                <p class="status-message" id="statusMessage"></p>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        // Registrar service worker
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('service-worker.js')
+                .then(reg => console.log('Service Worker registrado'))
+                .catch(err => console.log('Error al registrar Service Worker:', err));
+        }
+    </script>
+    
+    <script type="module" src="app.js"></script>
+</body>
+</html>
